@@ -1,42 +1,28 @@
-const CONTENT_PACKAGE = 'com.enonic.xp.lib.content';
+export {
+  newBean,
+  toNativeObject,
+  toScriptValue
+} from './double-underscore';
 
 
-function newBean(packageName, className, params) {
-  return { ...__.newBean(`${packageName}.${className}`), params };
-}
-
-
-export function contentGet({
-  key,
-  branch = null
-}) {
-  return __.toNativeObject(newBean(CONTENT_PACKAGE, 'GetContentHandler', {
-    branch,
-    key
-  }).execute());
-  /*
-    return __.toNativeObject({
-      ...__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), branch, key
-    }.execute());
-  */
-}
-
-
-export function getAttachments({
-  key = null
-} = {}) {
-  return __.toNativeObject({
-    ...__.newBean(`${CONTENT_PACKAGE}.GetAttachmentsHandler`), key
-  }.execute());
-}
-
-
-export function getAttachmentStream({
-  key,
-  name
-}) {
-  const bean = __.newBean(`${CONTENT_PACKAGE}.GetAttachmentStreamHandler`);
-  bean.key = key;
-  bean.name = name;
-  return bean.getStream();
-}
+export {
+  Content,
+  create as contentCreate,
+  createMedia as contentCreateMedia,
+  delete as contentDelete,
+  get as contentGet,
+  getAttachments as contentGetAttachments,
+  getAttachmentStream as contentGetAttachmentStream,
+  getChildren as contentGetChildren,
+  getPermissions as contentGetPermissions,
+  getSite as contentGetSite,
+  getSiteConfig as contentGetSiteConfig,
+  getType as contentGetType,
+  getTypes as contentGetTypes,
+  modify as contentModify,
+  move as contentMove,
+  publish as contentPublish,
+  query as contentQuery,
+  setPermissions as contentSetPermissions,
+  unpublish as contentUnpublish
+} from './content';
