@@ -21,14 +21,23 @@ export function assetUrl(params) {
 }
 
 
+export const getAssetUrl = assetUrl;
+
+
 export function attachmentUrl(params) {
   return createUrl(PORTAL_URL_PACKAGE, 'AttachmentUrlHandler', params);
 }
 
 
+export const getAttachmentUrl = attachmentUrl;
+
+
 export function componentUrl(params) {
   return createUrl(PORTAL_URL_PACKAGE, 'ComponentUrlHandler', params);
 }
+
+
+export const getComponentUrl = componentUrl;
 
 
 export function getComponent() {
@@ -81,6 +90,9 @@ export function idProviderUrl(params = {}) {
 }
 
 
+export const getIdProviderUrl = idProviderUrl;
+
+
 export function imagePlaceholder({
   height = 0,
   width = 0
@@ -92,9 +104,15 @@ export function imagePlaceholder({
 }
 
 
+export const getImagePlaceholderDataUri = imagePlaceholder;
+
+
 export function imageUrl(params) {
   return createUrl(PORTAL_URL_PACKAGE, 'ImageUrlHandler', params);
 }
+
+
+export const getImageUrl = imageUrl;
 
 
 export function loginUrl(params = {}) {
@@ -102,14 +120,23 @@ export function loginUrl(params = {}) {
 }
 
 
+export const getLoginUrl = loginUrl;
+
+
 export function logoutUrl(params = {}) {
   return createUrl(PORTAL_URL_PACKAGE, 'LogoutUrlHandler', params);
 }
 
 
+export const getLogoutUrl = logoutUrl;
+
+
 export function pageUrl(params) {
   return createUrl(PORTAL_URL_PACKAGE, 'PageUrlHandler', params);
 }
+
+
+export const getPageUrl = pageUrl;
 
 
 export function processHtml(params) {
@@ -127,9 +154,15 @@ export function serviceUrl(params) {
 }
 
 
+export const getServiceUrl = serviceUrl;
+
+
 export function url(params) {
   return createUrl(PORTAL_URL_PACKAGE, 'UrlHandler', params);
 }
+
+
+export const getUrl = url;
 
 
 export const Portal = {

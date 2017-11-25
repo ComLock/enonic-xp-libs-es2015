@@ -63,9 +63,9 @@ export {
 
 export {
   Portal,
-  assetUrl as getAssetUrl,
-  attachmentUrl as getAttachmentUrl,
-  componentUrl as getComponentUrl,
+  getAssetUrl,
+  getAttachmentUrl,
+  getComponentUrl,
   getComponent,
   getContent,
   getMultipartForm,
@@ -75,14 +75,14 @@ export {
   getSite,
   getSiteConfig,
   getUserStoreKey,
-  idProviderUrl as getIdProviderUrl,
-  imagePlaceholder as getImagePlaceholderDataUri,
-  imageUrl as getImageUrl,
-  loginUrl as getLoginUrl,
-  logoutUrl as getLogoutUrl,
-  pageUrl as getPageUrl,
+  getIdProviderUrl,
+  getImagePlaceholderDataUri,
+  getImageUrl,
+  getLoginUrl,
+  getLogoutUrl,
+  getPageUrl,
   processHtml,
   sanitizeHtml,
-  serviceUrl as getServiceUrl,
-  url as getUrl
+  getServiceUrl,
+  getUrl
 } from './portal';
