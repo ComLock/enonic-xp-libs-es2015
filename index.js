@@ -86,3 +86,9 @@ export {
   getServiceUrl,
   getUrl
 } from './portal';
+
+
+export {
+  Thymeleaf,
+  render
+} from './thymeleaf';
