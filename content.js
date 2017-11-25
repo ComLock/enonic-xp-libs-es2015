@@ -60,10 +60,12 @@ export function createMedia({
 }
 
 
+// Module build failed: SyntaxError: delete is a reserved word
 // https://www.w3schools.com/js/js_reserved.asp
 // delete synonyms: erase, remove, drop, destroy
 // export function delete({ Parsing error: Unexpected keyword 'delete' (Fatal)
-exports.delete = function ({ // eslint-disable-line func-names
+// exports.delete = function ({ // eslint-disable-line func-names
+export function erase({
   key,
   branch = null
 }) {
@@ -71,7 +73,7 @@ exports.delete = function ({ // eslint-disable-line func-names
     branch,
     key
   }).execute();
-};
+}
 
 
 export function get({
@@ -264,7 +266,8 @@ export function unpublish({
 export const Content = {
   create,
   createMedia,
-  delete: exports.delete,
+  // delete: exports.delete, // Module build failed: SyntaxError: delete is a reserved word
+  erase,
   get,
   getAttachments,
   getAttachmentStream,
