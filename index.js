@@ -27,3 +27,30 @@ export {
   setPermissions as contentSetPermissions,
   unpublish as contentUnpublish
 } from './content';
+
+
+export {
+  Portal,
+  assetUrl as getAssetUrl,
+  attachmentUrl as getAttachmentUrl,
+  componentUrl as getComponentUrl,
+  getComponent,
+  getContent,
+  getMultipartForm,
+  getMultipartItem,
+  getMultipartStream,
+  getMultipartText,
+  getSite,
+  getSiteConfig,
+  getUserStoreKey,
+  idProviderUrl as getIdProviderUrl,
+  imagePlaceholder as getImagePlaceholderDataUri,
+  imageUrl as getImageUrl,
+  loginUrl as getLoginUrl,
+  logoutUrl as getLogoutUrl,
+  pageUrl as getPageUrl,
+  processHtml,
+  sanitizeHtml,
+  serviceUrl as getServiceUrl,
+  url as getUrl
+} from './portal';
