@@ -9,7 +9,8 @@ export {
   Content,
   create as contentCreate,
   createMedia as contentCreateMedia,
-  delete as contentDelete,
+  // delete as contentDelete, // Module build failed: SyntaxError: delete is a reserved word
+  erase as contentErase,
   get as contentGet,
   getAttachments as contentGetAttachments,
   getAttachmentStream as contentGetAttachmentStream,
