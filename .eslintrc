@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "app": false,
+    "resolve": false,
+    "__": false
+  },
+  "rules": {
+    "comma-dangle": ["error", {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+    }]
+  }
+}
