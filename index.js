@@ -62,6 +62,13 @@ export {
 
 
 export {
+  I18n,
+  getPhrases,
+  localize
+} from './i18n';
+
+
+export {
   Portal,
   getAssetUrl,
   getAttachmentUrl,
