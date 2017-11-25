@@ -5,11 +5,13 @@ export function contentGet({
   key,
   branch = null
 }) {
-  return __.toNativeObject(Object.assign(__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), {
-    branch,
-    key
-  }).execute());
+  return __.toNativeObject({ ...__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), branch, key }.execute());
   /*
+    return __.toNativeObject(Object.assign(__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), {
+      branch,
+      key
+    }).execute());
+  *//*
     const bean = __.newBean(`${CONTENT_PACKAGE}.GetContentHandler`);
     bean.key = key;
     bean.branch = branch;
