@@ -13,6 +13,9 @@ export function getPhrases(locale = null, bundles) {
 }
 
 
+export const i18nGetPhrases = getPhrases;
+
+
 export function localize({
   bundles = null,
   key,

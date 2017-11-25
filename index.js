@@ -6,6 +6,16 @@ export {
 
 
 export {
+  Admin,
+  getAssetsUri,
+  getBaseUri,
+  getLauncherUrl,
+  getLocale,
+  adminGetPhrases // collision on getPhrases
+} from './admin';
+
+
+export {
   Auth,
   addMembers,
   changePassword,
@@ -63,7 +73,7 @@ export {
 
 export {
   I18n,
-  getPhrases,
+  i18nGetPhrases, // collision on getPhrases
   localize
 } from './i18n';
 
