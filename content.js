@@ -286,5 +286,4 @@ export const Content = {
 };
 
 
-// export { Content as default };
 export default Content;
