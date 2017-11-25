@@ -1,21 +1,23 @@
 const CONTENT_PACKAGE = 'com.enonic.xp.lib.content';
 
 
+function newBean(packageName, className, params) {
+  return { ...__.newBean(`${packageName}.${className}`), params };
+}
+
+
 export function contentGet({
   key,
   branch = null
 }) {
-  return __.toNativeObject({ ...__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), branch, key }.execute());
+  return __.toNativeObject(newBean(CONTENT_PACKAGE, 'GetContentHandler', {
+    branch,
+    key
+  }).execute());
   /*
-    return __.toNativeObject(Object.assign(__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), {
-      branch,
-      key
-    }).execute());
-  *//*
-    const bean = __.newBean(`${CONTENT_PACKAGE}.GetContentHandler`);
-    bean.key = key;
-    bean.branch = branch;
-    return __.toNativeObject(bean.execute());
+    return __.toNativeObject({
+      ...__.newBean(`${CONTENT_PACKAGE}.GetContentHandler`), branch, key
+    }.execute());
   */
 }
 
@@ -23,7 +25,18 @@ export function contentGet({
 export function getAttachments({
   key = null
 } = {}) {
-  const bean = __.newBean(`${CONTENT_PACKAGE}.GetAttachmentsHandler`);
+  return __.toNativeObject({
+    ...__.newBean(`${CONTENT_PACKAGE}.GetAttachmentsHandler`), key
+  }.execute());
+}
+
+
+export function getAttachmentStream({
+  key,
+  name
+}) {
+  const bean = __.newBean(`${CONTENT_PACKAGE}.GetAttachmentStreamHandler`);
   bean.key = key;
-  return __.toNativeObject(bean.execute());
+  bean.name = name;
+  return bean.getStream();
 }
