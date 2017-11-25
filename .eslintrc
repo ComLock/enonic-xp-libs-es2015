@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "globals": {
     "app": false,
+    "Java": false,
     "resolve": false,
     "__": false
   },
