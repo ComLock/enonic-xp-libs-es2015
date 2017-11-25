@@ -6,6 +6,31 @@ export {
 
 
 export {
+  Auth,
+  addMembers,
+  changePassword,
+  createGroup,
+  createUser,
+  findPrincipals,
+  findUsers,
+  generatePassword,
+  getIdProviderConfig,
+  getMembers,
+  getMemberships,
+  getPrincipal,
+  getProfile,
+  getUser,
+  hasRole,
+  login,
+  logout,
+  modifyGroup,
+  modifyProfile,
+  modifyUser,
+  removeMembers
+} from './auth';
+
+
+export {
   Content,
   create as contentCreate,
   createMedia as contentCreateMedia,
