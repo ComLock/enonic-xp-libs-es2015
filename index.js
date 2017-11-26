@@ -78,6 +78,13 @@ export {
 
 
 export {
+  Event,
+  listener,
+  send
+} from './event';
+
+
+export {
   I18n,
   i18nGetPhrases, // collision on getPhrases
   localize
