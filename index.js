@@ -48,7 +48,7 @@ export {
 
 export {
   Context,
-  getContext,
+  getContext, // collision on get
   run
 } from './context';
 
@@ -59,7 +59,7 @@ export {
   createMedia as contentCreateMedia,
   // delete as contentDelete, // Module build failed: SyntaxError: delete is a reserved word
   erase as contentErase,
-  get as contentGet, // getContent would collide with portal
+  get as contentGet, // collision on get and getContent would collide with portal
   getAttachments as contentGetAttachments,
   getAttachmentStream as contentGetAttachmentStream,
   getChildren as contentGetChildren,
