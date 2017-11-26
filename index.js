@@ -164,6 +164,18 @@ export {
 
 
 export {
+  Task,
+  getTask, // collision on get
+  isRunning,
+  listTasks, // collision on list
+  progress,
+  sleep,
+  submit,
+  submitNamed
+} from './task';
+
+
+export {
   Thymeleaf,
   render, // collision on render, but this is the "default" one
   renderThymeleaf // Providing this for cleaner import
