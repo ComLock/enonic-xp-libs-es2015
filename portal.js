@@ -45,9 +45,12 @@ export function getComponent() {
 }
 
 
-export function getContent() {
+export function getCurrentContent() {
   return toNativeObject(newBean(PORTAL_CURRENT_PACKAGE, 'GetCurrentContentHandler').execute());
 }
+
+
+export const getContent = getCurrentContent; // Backwards compatibility
 
 
 export function getMultipartForm() {
@@ -70,14 +73,20 @@ export function getMultipartText(name, index = 0) {
 }
 
 
-export function getSite() {
+export function getCurrentSite() {
   return toNativeObject(newBean(PORTAL_CURRENT_PACKAGE, 'GetCurrentSiteHandler').execute());
 }
 
 
-export function getSiteConfig() {
+export const getSite = getCurrentSite; // Backwards compatibility
+
+
+export function getCurrentSiteConfig() {
   return toNativeObject(newBean(PORTAL_CURRENT_PACKAGE, 'GetCurrentSiteConfigHandler').execute());
 }
+
+
+export const getSiteConfig = getCurrentSiteConfig; // Backwards compatibility
 
 
 export function getUserStoreKey() {
@@ -170,13 +179,16 @@ export const Portal = {
   attachmentUrl,
   componentUrl,
   getComponent,
-  getContent,
+  getContent: getCurrentContent,
+  // getCurrentContent,
+  // getCurrentSite,
+  // getCurrentSiteConfig,
   getMultipartForm,
   getMultipartItem,
   getMultipartStream,
   getMultipartText,
-  getSite,
-  getSiteConfig,
+  getSite: getCurrentSite,
+  getSiteConfig: getCurrentSiteConfig,
   getUserStoreKey,
   idProviderUrl,
   imagePlaceholder,

@@ -8,7 +8,7 @@ import {
 const CONTENT_PACKAGE = 'com.enonic.xp.lib.content';
 
 
-export function create({
+export function createContent({
   branch = null,
   contentType = null,
   data = {},
@@ -34,7 +34,10 @@ export function create({
     refresh,
     x: toScriptValue(x)
   }).execute());
-}
+} // export function createContent
+
+
+export const create = createContent; // Backwards compatibility
 
 
 export function createMedia({
@@ -60,12 +63,7 @@ export function createMedia({
 }
 
 
-// Module build failed: SyntaxError: delete is a reserved word
-// https://www.w3schools.com/js/js_reserved.asp
-// delete synonyms: erase, remove, drop, destroy
-// export function delete({ Parsing error: Unexpected keyword 'delete' (Fatal)
-// exports.delete = function ({ // eslint-disable-line func-names
-export function erase({
+export function deleteContent({
   key,
   branch = null
 }) {
@@ -76,7 +74,10 @@ export function erase({
 }
 
 
-export function get({
+exports.delete = deleteContent; // Backwards compatibility
+
+
+export function getContentByKey({
   key,
   branch = null
 }) {
@@ -85,6 +86,8 @@ export function get({
     key
   }).execute());
 }
+
+export const get = getContentByKey; // Backwards compatibility
 
 
 export function getAttachments({
@@ -133,16 +136,19 @@ export function getPermissions({
 }
 
 
-export function getSite({
-  key = null
-} = {}) {
+export function getSiteByKey({
+  key
+}) {
   return toNativeObject(newBean(CONTENT_PACKAGE, 'GetSiteHandler', {
     key
   }).execute());
 }
 
 
-export function getSiteConfig({
+export const getSite = getSiteByKey; // Backwards compatibility
+
+
+export function getSiteConfigByKey({
   applicationKey = null,
   key = null
 } = {}) {
@@ -151,6 +157,9 @@ export function getSiteConfig({
     key
   }).execute());
 }
+
+
+export const getSiteConfig = getSiteConfigByKey; // Backwards compatibility
 
 
 export function getType({
@@ -264,17 +273,21 @@ export function unpublish({
 
 
 export const Content = {
-  create,
+  create: createContent,
+  // createContent,
   createMedia,
-  // delete: exports.delete, // Module build failed: SyntaxError: delete is a reserved word
-  erase,
-  get,
+  delete: deleteContent, // import Content from './content'; Content.delete();
+  // deleteContent,
+  get: getContentByKey,
   getAttachments,
   getAttachmentStream,
   getChildren,
+  // getContentByKey,
   getPermissions,
-  getSite,
-  getSiteConfig,
+  getSite: getSiteByKey,
+  // getSiteByKey,
+  getSiteConfig: getSiteConfigByKey,
+  // getSiteConfigByKey,
   getType,
   getTypes,
   modify,

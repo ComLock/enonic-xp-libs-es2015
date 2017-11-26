@@ -55,25 +55,24 @@ export {
 
 export {
   Content,
-  create as contentCreate,
+  createContent, // collision on create
   createMedia as contentCreateMedia,
-  // delete as contentDelete, // Module build failed: SyntaxError: delete is a reserved word
-  erase as contentErase,
-  get as contentGet, // collision on get and getContent would collide with portal
-  getAttachments as contentGetAttachments,
-  getAttachmentStream as contentGetAttachmentStream,
-  getChildren as contentGetChildren,
-  getPermissions as contentGetPermissions,
-  getSite as contentGetSite,
-  getSiteConfig as contentGetSiteConfig,
-  getType as contentGetType,
-  getTypes as contentGetTypes,
-  modify as contentModify,
-  move as contentMove,
-  publish as contentPublish,
-  query as contentQuery,
-  setPermissions as contentSetPermissions,
-  unpublish as contentUnpublish
+  deleteContent,
+  getAttachments,
+  getAttachmentStream,
+  getChildren,
+  getContentByKey, // collision on get and getContent would collide with portal
+  getPermissions,
+  getSiteByKey, // collision on getSite
+  getSiteConfigByKey, // collision on getSiteConfig
+  getType,
+  getTypes,
+  modify,
+  move,
+  publish,
+  query,
+  setPermissions,
+  unpublish
 } from './content';
 
 
@@ -128,13 +127,16 @@ export {
   getAttachmentUrl,
   getComponentUrl,
   getComponent,
-  getContent,
+  getContent, // collision, but this is the "default"
+  getCurrentContent,
+  getCurrentSite,
+  getCurrentSiteConfig,
   getMultipartForm,
   getMultipartItem,
   getMultipartStream,
   getMultipartText,
-  getSite,
-  getSiteConfig,
+  getSite, // collision on getSite, but this is the "default"
+  getSiteConfig, // collision on getSite, but this is the "default"
   getUserStoreKey,
   getIdProviderUrl,
   getImagePlaceholderDataUri,
