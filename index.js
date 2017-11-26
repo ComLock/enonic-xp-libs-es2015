@@ -92,6 +92,18 @@ export {
 
 
 export {
+  Io,
+  getMimeType,
+  getResource,
+  getSize,
+  newStream,
+  processLines,
+  readLines,
+  readText
+} from './io';
+
+
+export {
   Portal,
   getAssetUrl,
   getAttachmentUrl,
