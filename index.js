@@ -187,3 +187,16 @@ export {
   required,
   throwRequiredParam
 } from './util';
+
+
+export {
+  Value,
+  binary,
+  geoPoint,
+  geoPointString,
+  instant,
+  localDate,
+  localDateTime,
+  localTime,
+  reference
+} from './value';
