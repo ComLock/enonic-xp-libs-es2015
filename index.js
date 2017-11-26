@@ -116,6 +116,13 @@ export {
 
 
 export {
+  Node,
+  connect,
+  multiRepoConnect
+} from './node';
+
+
+export {
   Portal,
   getAssetUrl,
   getAttachmentUrl,
