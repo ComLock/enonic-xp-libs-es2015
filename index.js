@@ -59,7 +59,7 @@ export {
   createMedia as contentCreateMedia,
   // delete as contentDelete, // Module build failed: SyntaxError: delete is a reserved word
   erase as contentErase,
-  get as contentGet,
+  get as contentGet, // getContent would collide with portal
   getAttachments as contentGetAttachments,
   getAttachmentStream as contentGetAttachmentStream,
   getChildren as contentGetChildren,
