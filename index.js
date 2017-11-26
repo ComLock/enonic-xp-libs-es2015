@@ -152,6 +152,18 @@ export {
 
 
 export {
+  Repo,
+  createRepo, // collision on create
+  createBranch,
+  deleteRepo, // collision on erase
+  deleteBranch,
+  getRepo, // collision on get
+  listRepos, // collision on list
+  refresh
+} from './repo';
+
+
+export {
   Thymeleaf,
   render, // collision on render, but this is the "default" one
   renderThymeleaf // Providing this for cleaner import
