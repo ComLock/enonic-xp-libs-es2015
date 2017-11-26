@@ -17,6 +17,9 @@ export function render(view, model, options = {}) {
 }
 
 
+export const renderThymeleaf = render;
+
+
 export const Thymeleaf = {
   render
 };

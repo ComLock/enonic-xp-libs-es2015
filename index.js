@@ -110,6 +110,12 @@ export {
 
 
 export {
+  Mustache,
+  renderMustache // collision on render
+} from './mustache';
+
+
+export {
   Portal,
   getAssetUrl,
   getAttachmentUrl,
@@ -138,5 +144,6 @@ export {
 
 export {
   Thymeleaf,
-  render
+  render, // collision on render, but this is the "default" one
+  renderThymeleaf // Providing this for cleaner import
 } from './thymeleaf';
