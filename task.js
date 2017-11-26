@@ -9,7 +9,7 @@ const TASK_PACKAGE = 'com.enonic.xp.lib.task';
 
 
 export function getTask(taskId) {
-  return toNativeObject(newBean(TASK_PACKAGE, 'GetTaskHandler', {
+  return toNativeObject(newBean(`${TASK_PACKAGE}.GetTaskHandler`, {
     taskId
   }).getTask());
 }
@@ -27,7 +27,7 @@ export function listTasks({
   name = null,
   state = null
 } = {}) {
-  return toNativeObject(newBean(TASK_PACKAGE, 'ListTasksHandler', {
+  return toNativeObject(newBean(`${TASK_PACKAGE}.ListTasksHandler`, {
     name,
     state
   }).list());
@@ -42,7 +42,7 @@ export function progress({
   info = null,
   total = null
 } = {}) {
-  newBean(TASK_PACKAGE, 'TaskProgressHandler', {
+  newBean(`${TASK_PACKAGE}.TaskProgressHandler`, {
     current,
     info,
     total
@@ -51,7 +51,7 @@ export function progress({
 
 
 export function sleep(timeMillis = 0) {
-  newBean(TASK_PACKAGE, 'SleepHandler', {
+  newBean(`${TASK_PACKAGE}.SleepHandler`, {
     timeMillis
   }).sleep();
 }
@@ -61,7 +61,7 @@ export function submit({
   description,
   task
 }) {
-  return newBean(TASK_PACKAGE, 'SubmitTaskHandler', {
+  return newBean(`${TASK_PACKAGE}.SubmitTaskHandler`, {
     description,
     task
   }).submit();
@@ -72,7 +72,7 @@ export function submitNamed({
   name,
   config = {}
 }) {
-  return newBean(TASK_PACKAGE, 'SubmitNamedTaskHandler', {
+  return newBean(`${TASK_PACKAGE}.SubmitNamedTaskHandler`, {
     config: toScriptValue(config),
     name
   }).submit();

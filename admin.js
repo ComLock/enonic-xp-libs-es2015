@@ -5,7 +5,7 @@ import { i18nGetPhrases } from './i18n';
 import { getAssetUrl } from './portal';
 
 
-const HELPER = newBean('com.enonic.xp.lib.admin', 'AdminLibHelper');
+const HELPER = newBean('com.enonic.xp.lib.admin.AdminLibHelper');
 
 
 function getMainAppUrl(path) {

@@ -21,7 +21,7 @@ export function createContent({
   refresh = null,
   x = {}
 } = {}) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'CreateContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.CreateContentHandler`, {
     branch,
     contentType,
     data: toScriptValue(data),
@@ -50,7 +50,7 @@ export function createMedia({
   name,
   parentPath = null
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'CreateMediaHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.CreateMediaHandler`, {
     branch,
     data,
     focalX,
@@ -67,7 +67,7 @@ export function deleteContent({
   key,
   branch = null
 }) {
-  return newBean(CONTENT_PACKAGE, 'DeleteContentHandler', {
+  return newBean(`${CONTENT_PACKAGE}.DeleteContentHandler`, {
     branch,
     key
   }).execute();
@@ -81,7 +81,7 @@ export function getContentByKey({
   key,
   branch = null
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'GetContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetContentHandler`, {
     branch,
     key
   }).execute());
@@ -93,7 +93,7 @@ export const get = getContentByKey; // Backwards compatibility
 export function getAttachments({
   key = null
 } = {}) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'GetAttachmentsHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetAttachmentsHandler`, {
     key
   }).execute());
 }
@@ -103,7 +103,7 @@ export function getAttachmentStream({
   key,
   name
 }) {
-  return newBean(CONTENT_PACKAGE, 'GetAttachmentStreamHandler', {
+  return newBean(`${CONTENT_PACKAGE}.GetAttachmentStreamHandler`, {
     key,
     name
   }).getStream();
@@ -117,7 +117,7 @@ export function getChildren({
   sort = null,
   start
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'GetChildContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetChildContentHandler`, {
     branch,
     count,
     key,
@@ -130,7 +130,7 @@ export function getChildren({
 export function getPermissions({
   key
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'GetPermissionsHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetPermissionsHandler`, {
     key
   }).execute());
 }
@@ -139,7 +139,7 @@ export function getPermissions({
 export function getSiteByKey({
   key
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'GetSiteHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetSiteHandler`, {
     key
   }).execute());
 }
@@ -152,7 +152,7 @@ export function getSiteConfigByKey({
   applicationKey = null,
   key = null
 } = {}) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'GetSiteConfigHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetSiteConfigHandler`, {
     applicationKey,
     key
   }).execute());
@@ -165,7 +165,7 @@ export const getSiteConfig = getSiteConfigByKey; // Backwards compatibility
 export function getType({
   name = null
 } = {}) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'ContentTypeHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.ContentTypeHandler`, {
     name
   }).getContentType());
 }
@@ -182,7 +182,7 @@ export function modify({
   editor = c => c,
   requireValid = null
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'ModifyContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.ModifyContentHandler`, {
     branch,
     key,
     editor: toScriptValue(editor),
@@ -196,7 +196,7 @@ export function move({
   source,
   target
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'MoveContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.MoveContentHandler`, {
     branch,
     source,
     target
@@ -212,7 +212,7 @@ export function publish({
   sourceBranch,
   schedule = {}
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'PublishContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.PublishContentHandler`, {
     contentPublishInfo: toScriptValue(schedule),
     excludeChildrenIds,
     includeDependencies,
@@ -233,7 +233,7 @@ export function query({
   sort = null,
   start = null
 } = {}) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'QueryContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.QueryContentHandler`, {
     aggregations: toScriptValue(aggregations),
     branch,
     contentTypes: toScriptValue(contentTypes),
@@ -253,7 +253,7 @@ export function setPermissions({
   overwriteChildPermissions = false,
   permissions = []
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'SetPermissionsHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.SetPermissionsHandler`, {
     branch,
     inheritPermissions,
     key,
@@ -266,7 +266,7 @@ export function setPermissions({
 export function unpublish({
   keys
 }) {
-  return toNativeObject(newBean(CONTENT_PACKAGE, 'UnpublishContentHandler', {
+  return toNativeObject(newBean(`${CONTENT_PACKAGE}.UnpublishContentHandler`, {
     keys
   }).execute());
 }

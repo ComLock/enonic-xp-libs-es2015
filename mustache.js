@@ -5,7 +5,7 @@ import {
 
 
 export function render(view, model) {
-  return newBean('com.enonic.xp.lib.mustache', 'MustacheService', {
+  return newBean('com.enonic.xp.lib.mustache.MustacheService', {
     model: toScriptValue(model),
     view
   }).process();

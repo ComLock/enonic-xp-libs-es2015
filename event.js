@@ -13,7 +13,7 @@ export function listener({
   localOnly = false,
   type = ''
 }) {
-  const helper = newBean(EVENT_PACKAGE, 'EventListenerHelper', {
+  const helper = newBean(`${EVENT_PACKAGE}.EventListenerHelper`, {
     listener: event => callback(toNativeObject(event)),
     localOnly,
     type
@@ -27,7 +27,7 @@ export function send({
   distributed = false,
   type = 'test'
 } = {}) {
-  const helper = newBean(EVENT_PACKAGE, 'EventSenderHelper', {
+  const helper = newBean(`${EVENT_PACKAGE}.EventSenderHelper`, {
     data: toScriptValue(data),
     distributed,
     type

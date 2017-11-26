@@ -27,7 +27,7 @@ export function createRepo({
     // definitions
   }
 }) {
-  return toNativeObject(newBean(REPO_PACKAGE, 'CreateRepositoryHandler', {
+  return toNativeObject(newBean(`${REPO_PACKAGE}.CreateRepositoryHandler`, {
     id,
     indexDefinitions: settings.definitions ? toScriptValue(settings.definitions) : null,
     rootChildOrder,
@@ -43,7 +43,7 @@ export function createBranch({
   branchId,
   repoId
 }) {
-  return toNativeObject(newBean(REPO_PACKAGE, 'CreateBranchHandler', {
+  return toNativeObject(newBean(`${REPO_PACKAGE}.CreateBranchHandler`, {
     branchId,
     repoId
   }).execute());
@@ -51,7 +51,7 @@ export function createBranch({
 
 
 export function deleteRepo(id) {
-  return newBean(REPO_PACKAGE, 'DeleteRepositoryHandler', {
+  return newBean(`${REPO_PACKAGE}.DeleteRepositoryHandler`, {
     repositoryId: id || throwRequiredParam('id')
   }).execute();
 }
@@ -64,7 +64,7 @@ export function deleteBranch({
   branchId,
   repoId
 }) {
-  return toNativeObject(newBean(REPO_PACKAGE, 'DeleteBranchHandler', {
+  return toNativeObject(newBean(`${REPO_PACKAGE}.DeleteBranchHandler`, {
     branchId,
     repoId
   }).execute());
@@ -72,7 +72,7 @@ export function deleteBranch({
 
 
 export function getRepo(id) {
-  return toNativeObject(newBean(REPO_PACKAGE, 'GetRepositoryHandler', {
+  return toNativeObject(newBean(`${REPO_PACKAGE}.GetRepositoryHandler`, {
     repositoryId: id || throwRequiredParam('id')
   }).execute());
 }

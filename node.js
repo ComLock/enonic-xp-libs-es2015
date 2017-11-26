@@ -36,7 +36,7 @@ class RepoConnection {
     // optional
     includeChildren = false
   }) {
-    return toNativeObject(this.repoConnection.diff(newBean(NODE_PACKAGE, 'DiffBranchesHandlerParams', {
+    return toNativeObject(this.repoConnection.diff(newBean(`${NODE_PACKAGE}.DiffBranchesHandlerParams`, {
       key,
       target,
       includeChildren
@@ -106,7 +106,7 @@ class RepoConnection {
     exclude = null,
     resolve = true
   }) {
-    return toNativeObject(this.repoConnection.push(newBean(NODE_PACKAGE, 'PushNodeHandlerParams', {
+    return toNativeObject(this.repoConnection.push(newBean(`${NODE_PACKAGE}.PushNodeHandlerParams`, {
       keys,
       targetBranch: target,
       includeChildren,
@@ -208,7 +208,7 @@ export function connect({
       params.userStore = user.userStore;
     }
   }
-  const nodeHandleContext = newBean(NODE_PACKAGE, 'NodeHandleContext', params);
+  const nodeHandleContext = newBean(`${NODE_PACKAGE}.NodeHandleContext`, params);
   return new RepoConnection(factory.create(nodeHandleContext));
 }
 

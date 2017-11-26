@@ -11,7 +11,7 @@ const AUTH_PACKAGE = 'com.enonic.xp.lib.auth';
 
 
 export function addMembers(principalKey = null, members = null) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'AddMembersHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.AddMembersHandler`, {
     members: [].concat(members),
     principalKey
   }).addMembers());
@@ -22,7 +22,7 @@ export function changePassword({
   password,
   userKey
 }) {
-  return newBean(AUTH_PACKAGE, 'ChangePasswordHandler', {
+  return newBean(`${AUTH_PACKAGE}.ChangePasswordHandler`, {
     password,
     userKey
   }).changePassword();
@@ -35,7 +35,7 @@ export function createGroup({
   name,
   userStore
 }) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'CreateGroupHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.CreateGroupHandler`, {
     description,
     displayName,
     name,
@@ -50,7 +50,7 @@ export function createUser({
   name,
   userStore
 }) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'CreateUserHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.CreateUserHandler`, {
     displayName,
     email,
     name,
@@ -67,7 +67,7 @@ export function findPrincipals({
   type = null,
   userStore = null
 } = {}) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'FindPrincipalsHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.FindPrincipalsHandler`, {
     count,
     name,
     searchText,
@@ -85,7 +85,7 @@ export function findUsers({
   start = null,
   sort = null
 } = {}) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'FindUsersHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.FindUsersHandler`, {
     count,
     includeProfile,
     query,
@@ -106,21 +106,21 @@ export function getIdProviderConfig() {
 
 
 export function getMembers(principalKey = null) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'GetMembersHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.GetMembersHandler`, {
     principalKey
   }).getMembers());
 }
 
 
 export function getMemberships(principalKey = null) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'GetMembershipsHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.GetMembershipsHandler`, {
     principalKey
   }).getMemberships());
 }
 
 
 export function getPrincipal(principalKey = null) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'GetPrincipalHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.GetPrincipalHandler`, {
     principalKey
   }).getPrincipal());
 }
@@ -130,7 +130,7 @@ export function getProfile({
   key = null,
   scope = null
 } = {}) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'GetProfileHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.GetProfileHandler`, {
     key,
     scope
   }).execute());
@@ -140,14 +140,14 @@ export function getProfile({
 export function getUser({
   includeProfile = false
 } = {}) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'GetUserHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.GetUserHandler`, {
     includeProfile
   }).getUser());
 }
 
 
 export function hasRole(role = null) {
-  return newBean(AUTH_PACKAGE, 'HasRoleHandler', {
+  return newBean(`${AUTH_PACKAGE}.HasRoleHandler`, {
     role
   }).hasRole();
 }
@@ -169,7 +169,7 @@ export function login({
   if (userStore) {
     params.userStore = [].concat(userStore);
   }
-  return toNativeObject(newBean(AUTH_PACKAGE, 'LoginHandler', params).login());
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.LoginHandler`, params).login());
 }
 
 
@@ -182,7 +182,7 @@ export function modifyGroup({
   principalKey,
   editor = g => g
 }) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'ModifyGroupHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.ModifyGroupHandler`, {
     principalKey,
     editor: toScriptValue(editor)
   }).modifyGroup());
@@ -194,7 +194,7 @@ export function modifyProfile({
   key = null,
   scope = null
 } = {}) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'ModifyProfileHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.ModifyProfileHandler`, {
     editor: toScriptValue(editor),
     key,
     scope
@@ -206,7 +206,7 @@ export function modifyUser({
   editor = u => u,
   principalKey
 }) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'ModifyUserHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.ModifyUserHandler`, {
     editor: toScriptValue(editor),
     principalKey
   }).modifyUser());
@@ -214,7 +214,7 @@ export function modifyUser({
 
 
 export function removeMembers(principalKey = null, members = null) {
-  return toNativeObject(newBean(AUTH_PACKAGE, 'RemoveMembersHandler', {
+  return toNativeObject(newBean(`${AUTH_PACKAGE}.RemoveMembersHandler`, {
     members: [].concat(members),
     principalKey
   }).removeMembers());

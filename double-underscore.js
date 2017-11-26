@@ -3,9 +3,12 @@ export function disposer(func) {
 }
 
 
-// TODO I broke the API here, I probably shouldn't do that.
-export function newBean(packageName, className, params = {}) {
-  return { ...__.newBean(`${packageName}.${className}`), params };
+/* export function newBean(className) {
+  return __.newBean(className);
+} */
+// NOTE API extended, might break future addition
+export function newBean(className, params = {}) {
+  return { ...__.newBean(className), params };
 }
 
 

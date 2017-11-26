@@ -106,7 +106,7 @@ export function imagePlaceholder({
   height = 0,
   width = 0
 } = {}) {
-  return newBean(PORTAL_URL_PACKAGE, 'ImagePlaceholderHandler', {
+  return newBean(`${PORTAL_URL_PACKAGE}.ImagePlaceholderHandler`, {
     height,
     width
   }).createImagePlaceholder();

@@ -17,7 +17,7 @@ export function send({
   replyTo = [],
   subject = null
 }) {
-  return newBean('com.enonic.xp.lib.mail', 'SendMailHandler', {
+  return newBean('com.enonic.xp.lib.mail.SendMailHandler', {
     from: [].concat(from),
     to: [].concat(to),
     attachments,
