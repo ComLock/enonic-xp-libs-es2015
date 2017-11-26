@@ -80,7 +80,7 @@ export {
 export {
   Event,
   listener,
-  send
+  sendEvent // collision on send
 } from './event';
 
 
@@ -101,6 +101,12 @@ export {
   readLines,
   readText
 } from './io';
+
+
+export {
+  Mail,
+  sendMail // collision on send
+} from './event';
 
 
 export {

@@ -36,6 +36,9 @@ export function send({
 }
 
 
+export const sendEvent = send;
+
+
 export const Event = {
   listener,
   send
