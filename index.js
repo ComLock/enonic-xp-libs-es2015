@@ -200,3 +200,12 @@ export {
   localTime,
   reference
 } from './value';
+
+
+export {
+  WebSocket,
+  addToGroup,
+  removeFromGroup,
+  sendToSocket, // collision on send
+  sendToGroup
+} from './websocket';
