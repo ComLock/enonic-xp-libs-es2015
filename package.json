@@ -14,5 +14,8 @@
     "type": "git",
     "url": "git+https://github.com/comlock/enonic-xp-libs-es2015"
   },
+  "scripts": {
+    "eslint": "node_modules/.bin/eslint"
+  },
   "version": "6.12.2-RC1"
 }

@@ -3,14 +3,11 @@ import {
   toNativeObject,
   toScriptValue
 } from './double-underscore';
-
+import {
+  throwRequiredParam
+} from './util';
 
 const AUTH_PACKAGE = 'com.enonic.xp.lib.auth';
-
-
-function throwRequiredParam(name) {
-  throw new Error(`Parameter '${name}' is required`);
-}
 
 
 export function addMembers(principalKey = null, members = null) {
