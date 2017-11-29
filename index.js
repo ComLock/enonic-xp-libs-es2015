@@ -2,7 +2,7 @@ export {
   newBean,
   toNativeObject,
   toScriptValue
-} from './double-underscore';
+} from './src/double-underscore';
 
 
 export {
@@ -12,7 +12,7 @@ export {
   getLauncherUrl,
   getLocale,
   adminGetPhrases // collision on getPhrases
-} from './admin';
+} from './src/admin';
 
 
 export {
@@ -37,20 +37,20 @@ export {
   modifyProfile,
   modifyUser,
   removeMembers
-} from './auth';
+} from './src/auth';
 
 
 export {
   Common,
   sanitize
-} from './common';
+} from './src/common';
 
 
 export {
   Context,
   getContext, // collision on get
   run
-} from './context';
+} from './src/context';
 
 
 export {
@@ -73,21 +73,21 @@ export {
   query,
   setPermissions,
   unpublish
-} from './content';
+} from './src/content';
 
 
 export {
   Event,
   listener,
   sendEvent // collision on send
-} from './event';
+} from './src/event';
 
 
 export {
   I18n,
   i18nGetPhrases, // collision on getPhrases
   localize
-} from './i18n';
+} from './src/i18n';
 
 
 export {
@@ -99,26 +99,26 @@ export {
   processLines,
   readLines,
   readText
-} from './io';
+} from './src/io';
 
 
 export {
   Mail,
   sendMail // collision on send
-} from './event';
+} from './src/event';
 
 
 export {
   Mustache,
   renderMustache // collision on render
-} from './mustache';
+} from './src/mustache';
 
 
 export {
   Node,
   connect,
   multiRepoConnect
-} from './node';
+} from './src/node';
 
 
 export {
@@ -148,7 +148,7 @@ export {
   sanitizeHtml,
   getServiceUrl,
   getUrl
-} from './portal';
+} from './src/portal';
 
 
 export {
@@ -160,7 +160,7 @@ export {
   getRepo, // collision on get
   listRepos, // collision on list
   refresh
-} from './repo';
+} from './src/repo';
 
 
 export {
@@ -172,21 +172,21 @@ export {
   sleep,
   submit,
   submitNamed
-} from './task';
+} from './src/task';
 
 
 export {
   Thymeleaf,
   render, // collision on render, but this is the "default" one
   renderThymeleaf // Providing this for cleaner import
-} from './thymeleaf';
+} from './src/thymeleaf';
 
 
 export {
   Util,
   required,
   throwRequiredParam
-} from './util';
+} from './src/util';
 
 
 export {
@@ -199,7 +199,7 @@ export {
   localDateTime,
   localTime,
   reference
-} from './value';
+} from './src/value';
 
 
 export {
@@ -208,4 +208,4 @@ export {
   removeFromGroup,
   sendToSocket, // collision on send
   sendToGroup
-} from './websocket';
+} from './src/websocket';
