@@ -1,10 +1,16 @@
 {
   "author": "Christian Westgaard <cwe@enonic.com>",
+  "description": "All the Enonic XP core libs in Ecmasript 2015",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-plugin-optimize-starts-with": "^1.0.1",
     "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -12,7 +18,8 @@
     "eslint-plugin-react": "^7.6.0",
     "mocha": "^5.0.0",
     "proxyquire": "^1.8.0",
-    "sinon": "^4.2.1"
+    "sinon": "^4.2.1",
+    "webpack": "^3.10.0"
   },
   "files": [
     "index.js",
@@ -28,7 +35,8 @@
   "scripts": {
     "eslint": "node_modules/eslint/bin/eslint.js",
     "mocha": "node_modules/mocha/bin/mocha -c --require babel-core/register",
-    "test": "npm run mocha -- test/**/*.js"
+    "test": "npm run mocha -- test/**/*.js",
+    "webpack": "./node_modules/webpack/bin/webpack.js --config webpack.config.babel.js"
   },
-  "version": "6.12.2-RC2"
+  "version": "6.13.1-RC1"
 }

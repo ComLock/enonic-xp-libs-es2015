@@ -105,7 +105,7 @@ export {
 export {
   Mail,
   sendMail // collision on send
-} from './src/event';
+} from './src/mail';
 
 
 export {
