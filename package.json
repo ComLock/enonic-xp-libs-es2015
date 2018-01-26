@@ -30,5 +30,5 @@
     "mocha": "node_modules/mocha/bin/mocha -c --require babel-core/register",
     "test": "npm run mocha -- test/**/*.js"
   },
-  "version": "6.12.2-RC1"
+  "version": "6.12.2-RC2"
 }
