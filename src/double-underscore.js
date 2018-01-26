@@ -1,3 +1,13 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-underscore-dangle */
+const __ = {
+  newBean: () => {
+    return { generatePassword: () => 'password' };
+  },
+  toNativeObject: a => a
+};
+
+
 export function disposer(func) {
   return __.disposer(func);
 }

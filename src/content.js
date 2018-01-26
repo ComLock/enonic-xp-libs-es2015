@@ -3,7 +3,7 @@ import {
   toNativeObject,
   toScriptValue
 } from './double-underscore';
-
+import {getContentByKey as fnGetContentByKey} from './functional/content';
 
 const CONTENT_PACKAGE = 'com.enonic.xp.lib.content';
 
@@ -81,10 +81,9 @@ export function getContentByKey({
   key,
   branch = null
 }) {
-  return toNativeObject(newBean(`${CONTENT_PACKAGE}.GetContentHandler`, {
-    branch,
-    key
-  }).execute());
+  return fnGetContentByKey({
+    key, branch, newBean, toNativeObject
+  });
 }
 
 export const get = getContentByKey; // Backwards compatibility

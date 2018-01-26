@@ -14,9 +14,13 @@
     "proxyquire": "^1.8.0",
     "sinon": "^4.2.1"
   },
+  "files": [
+    "index.js",
+    "src/"
+  ],
   "license": "Apache-2.0",
   "name": "enonic-xp-libs-es2015",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/comlock/enonic-xp-libs-es2015"
