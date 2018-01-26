@@ -1,11 +1,13 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-underscore-dangle */
-const __ = {
+
+// __ is an external
+/*const __ = {
   newBean: () => {
     return { generatePassword: () => 'password' };
   },
   toNativeObject: a => a
-};
+};*/
 
 
 export function disposer(func) {

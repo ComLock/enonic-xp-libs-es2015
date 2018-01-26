@@ -1,18 +1,17 @@
 plugins {
   id 'com.enonic.defaults' version "1.0.3"
+  id 'com.enonic.xp.run' version '1.0.11' // provides xp.enonicRepo()
   id 'com.moowork.node' version "1.2.0"
-  id 'java'
-  id 'maven'
-  id 'maven-publish'
+  id 'java' // provides compile()
+  //id 'maven' // Needed for uploadArchives?
+  id 'maven-publish' // provides publishing() needed to download dependencies
 }
 
 
 repositories {
-    mavenLocal()
+    //mavenLocal()
     jcenter()
-    maven {
-        url 'http://repo.enonic.net/artifactory/public'
-    }
+    xp.enonicRepo()
 }
 
 
@@ -49,9 +48,17 @@ sourceSets {
             srcDir 'src/main/java'
         }
         resources {
-            exclude '*'
+            //srcDir 'src/main/resources'
+            srcDir './non-existant'
+            //exclude '*.js' // Path relative to srcDir
+            //exclude '**/*.js' // Path relative to srcDir
         }
     }
+}
+
+
+tasks.withType(Copy) {
+  includeEmptyDirs = false
 }
 
 

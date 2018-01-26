@@ -46,7 +46,7 @@ const WEBPACK_CONFIG = {
     libraryTarget: 'commonjs'
   } // output
 };
-console.log(`WEBPACK_CONFIG:${JSON.stringify(WEBPACK_CONFIG, null, 4)}`);
+//console.log(`WEBPACK_CONFIG:${JSON.stringify(WEBPACK_CONFIG, null, 4)}`);
 //process.exit();
 
 export { WEBPACK_CONFIG as default };
